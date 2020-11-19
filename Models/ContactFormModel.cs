@@ -4,7 +4,6 @@ namespace BZSCodingChallenge.Models
 {
     public class ContactFormModel
     {
-        public int Id { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
