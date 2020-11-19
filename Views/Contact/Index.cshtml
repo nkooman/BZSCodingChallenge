@@ -1,0 +1,39 @@
+﻿@model ContactFormModel
+@{
+    ViewData["Title"] = "Form";
+}
+
+    <form class="form" method="post">
+        <h1 class="form--title">Contact Us Form</h1>
+
+        <div class="form--group">
+            <div class="form--text-group">
+                @Html.LabelFor(m => m.FirstName, "First Name*", new { @class = "form--label" })
+                @Html.ValidationMessageFor(m => m.FirstName, "This field is required.")
+            </div>
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form--control" })
+        </div>
+
+        <div class="form--group">
+            <div class="form--text-group">
+                @Html.LabelFor(m => m.LastName, "Last Name*", new { @class = "form--label" })
+                @Html.ValidationMessageFor(m => m.LastName, "This field is required.")
+            </div>
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form--control" })
+        </div>
+
+        <div class="form--group">
+            <div class="form--text-group">
+                @Html.LabelFor(m => m.Email, "Email*", new { @class = "form--label" })
+                @Html.ValidationMessageFor(m => m.Email, "Please enter a valid email.")
+            </div>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form--control" })
+        </div>
+
+        <div class="form--group">
+            @Html.LabelFor(m => m.Message, "Message", new { @class = "form--label" })
+            @Html.TextAreaFor(m => m.Message, new { @class = "form--control form--textarea" })
+        </div>
+
+        <input class="form--submit" type="submit" />
+    </form>
